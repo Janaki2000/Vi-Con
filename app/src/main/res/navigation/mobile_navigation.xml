@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_call_message">
+
+    <fragment
+        android:id="@+id/nav_call_message"
+        android:name="com.example.vi_con.ui.main.ui.tools.callFragment"
+        android:label="Call/Message"
+        tools:layout="@layout/call_fragment" />
+
+
+    <fragment
+        android:id="@+id/nav_history"
+        android:name="com.example.vi_con.ui.main.ui.tools.historyFragment"
+        android:label="History"
+        tools:layout="@layout/history_fragment" />
+
+
+    <fragment
+        android:id="@+id/nav_add_student"
+        android:name="com.example.vi_con.ui.main.ui.tools.addFragment"
+        android:label="Add Student"
+        tools:layout="@layout/add_student_fragment" >
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.example.vi_con.ui.main.ui.tools.settingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/settings_fragment" />
+
+
+    <fragment
+        android:id="@+id/nav_ask_admin"
+        android:name="com.example.vi_con.ui.main.ui.tools.askAdminFragment"
+        android:label="Ask Admin"
+        tools:layout="@layout/ask_admin" />
+
+
+    <fragment
+        android:id="@+id/nav_help"
+        android:name="com.example.vi_con.ui.main.ui.tools.helpFragment"
+        android:label="Help"
+        tools:layout="@layout/help_fragment" />
+
+
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.example.vi_con.ui.main.ui.tools.aboutFragment"
+        android:label="About"
+        tools:layout="@layout/about_fragment" />
+
+
+</navigation>
