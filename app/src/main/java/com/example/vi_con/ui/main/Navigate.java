@@ -32,7 +32,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
 
-public class Navigate extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class Navigate extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -53,14 +53,11 @@ public class Navigate extends AppCompatActivity implements NavigationView.OnNavi
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle=new ActionBarDrawerToggle(this,drawer,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
+        drawer.requestLayout();
         toggle.syncState();
 
         NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-        if(savedInstanceState==null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new callFragment()).commit();
-            navigationView.setCheckedItem(R.id.nav_call_message);
-        }
+        navigationView.bringToFront();
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -73,42 +70,6 @@ public class Navigate extends AppCompatActivity implements NavigationView.OnNavi
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-
-        switch (menuItem.getItemId())
-        {
-            case R.id.nav_call_message:
-                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new callFragment()).commit();
-                break;
-
-            case R.id.nav_history:
-                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new historyFragment()).commit();
-                break;
-
-            case R.id.nav_add_student:
-                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new addFragment()).commit();
-                break;
-
-            case R.id.nav_settings:
-                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new settingsFragment()).commit();
-                break;
-
-            case R.id.nav_ask_admin:
-                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new askAdminFragment()).commit();
-                break;
-
-            case R.id.nav_help:
-                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new helpFragment()).commit();
-                break;
-
-            case R.id.nav_about:
-                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new aboutFragment()).commit();
-                break;
-        }
-
-        return true;
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
