@@ -58,8 +58,7 @@ public class Navigate extends AppCompatActivity {
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.bringToFront();
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+        // Passin        // menu should be considered as top level destinations.g each menu ID as a set of Ids because each
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_call_message, R.id.nav_history, R.id.nav_add_student,
                 R.id.nav_settings, R.id.nav_ask_admin, R.id.nav_help,R.id.nav_about)
