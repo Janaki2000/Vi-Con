@@ -57,6 +57,7 @@ public class Navigate extends AppCompatActivity {
         toggle.syncState();
 
         NavigationView navigationView = findViewById(R.id.nav_view);
+        //brings Navigation bar to top-most layer making it respond to clicks
         navigationView.bringToFront();
         // Passin        // menu should be considered as top level destinations.g each menu ID as a set of Ids because each
         mAppBarConfiguration = new AppBarConfiguration.Builder(
